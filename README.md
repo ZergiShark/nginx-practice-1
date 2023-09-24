@@ -58,6 +58,7 @@ body {
 ```
 
 Должно получиться вот так:
+
 1-ая воркер нода по 80 порту:
 
 ![screenshot](/screenshots/work_node_1.png)
