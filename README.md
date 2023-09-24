@@ -18,7 +18,7 @@ docker run -d -p 80:80 -v $(pwd)/nginx:/etc/nginx/ nginx
 docker exec $(docker ps --filter "ancestor=nginx" --format "{{.Names}}") /etc/init.d/nginx reload
 ```
 
-Аналогично настраиваем на остальных нодах
+Аналогично настраиваем на остальных нодах.
 Ноды условно поделим на мастер ноду (та, которая проксирует) и на воркеры (те, на которые проксируют)
 На воркер ноды в ~/nginx/conf.d/default.conf заменим корневую папку html (предварительно ей создав в папке ~/nginx)
 ```
