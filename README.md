@@ -11,7 +11,7 @@ docker stop $(docker ps -aqf "name=nginx") && docker rm $(docker ps -aqf "name=n
 ```
 Далее запустим doker с nginx, пробросим порт 80:80 и volume nginx
 ```
-docker run -d -p 80:80 -v $(pwd)/nginx:/etc/nginx/ nginx
+docker run -d -p 80:80 -v $(pwd)/nginx:/etc/nginx/ -v $(pwd)/html:/usr/share/nginx/html nginx
 ```
 Для перезапуска конфигурации необходимо использовать:
 ```
