@@ -20,16 +20,8 @@ docker exec $(docker ps --filter "ancestor=nginx" --format "{{.Names}}") /etc/in
 
 Аналогично настраиваем на остальных нодах.
 Ноды условно поделим на мастер ноду (та, которая проксирует) и на воркеры (те, на которые проксируют)
-На воркер ноды в ~/nginx/conf.d/default.conf заменим корневую папку html (предварительно ей создав в папке ~/nginx)
-```
-    location / {
-        root   /etc/nginx/html/;
-        index  index.html index.htm;
-    }
 
-```
-
-Создадим index.html - страницу:
+Отредактируем index.html - страницу на воркер нодах по пути ~/html/index.html:
 ```
 <!DOCTYPE html>
 <html>
