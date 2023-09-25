@@ -6,7 +6,7 @@
 Создадим папку nginx, которую подключим в качестве volume к контейнеру по пути /etc/nginx
 ```
 docker run --name nginx -d nginx
-docker cp $(docker ps --filter "ancestor=nginx" --format "{{.Names}}"):/etc/nginx .
+docker cp $(docker ps --filter "ancestor=nginx" --format "{{.Names}}"):/etc/nginx . && docker cp $(docker ps --filter "ancestor=nginx" --format "{{.Names}}"):/usr/share/nginx/html .
 docker stop $(docker ps -aqf "name=nginx") && docker rm $(docker ps -aqf "name=nginx")
 ```
 Далее запустим doker с nginx, пробросим порт 80:80 и volume nginx
