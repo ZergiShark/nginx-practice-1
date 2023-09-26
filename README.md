@@ -3,7 +3,7 @@
 
 ![screenshot](/screenshots/node-nginx.jpg)
 
-Создадим папку nginx, которую подключим в качестве volume к контейнеру по пути /etc/nginx
+Создадим папку nginx и html, которую подключим в качестве volume к контейнеру по пути /etc/nginx
 ```
 docker run --name nginx -d nginx
 docker cp $(docker ps --filter "ancestor=nginx" --format "{{.Names}}"):/etc/nginx . && docker cp $(docker ps --filter "ancestor=nginx" --format "{{.Names}}"):/usr/share/nginx/html .
